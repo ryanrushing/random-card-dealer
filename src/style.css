@@ -3,3 +3,9 @@
 body{
     background: green;
 }
+
+.card {
+    margin: 0 auto;
+    width: 200px;
+    height: 350px;
+}
