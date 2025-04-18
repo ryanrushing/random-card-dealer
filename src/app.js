@@ -8,7 +8,7 @@ window.onload = function () {
   
   //============================================
   //
-  //      Choose a suit (+ color) for card 
+  //      Choose a suit + value for card 
   //
   //============================================
 
@@ -38,34 +38,42 @@ window.onload = function () {
     return cardValues[Math.floor(Math.random() * cardValues.length)];
   }
 
-  //===============================================
+  //==========================================
   //
   //  Function to update card information
   //
-  //===============================================
+  //==========================================
 
   function updateCard() {
     const chosenSuit = getRandomSuit();
     const chosenValue = getRandomValue();
 
+    //-----------------------------------
     // Update the card's suit and color
+    // ----------------------------------
     const cardIcons = document.querySelectorAll(".card-icon");
     cardIcons[0].textContent = chosenSuit.icon;
     cardIcons[1].textContent = chosenSuit.icon;
     cardIcons[0].style.color = chosenSuit.color;
     cardIcons[1].style.color = chosenSuit.color;
 
+    //------------------------
     // Update the card value
+    //------------------------
     const cardValueDiv = document.querySelector("#card-value");
     cardValueDiv.textContent = chosenValue;
   }
 
+  //----------------------------------------------------------------
   // Add event listener for the refresh button to draw a new card
+  //----------------------------------------------------------------
   const button = document.querySelector("#generate"); // Ensure the correct button is selected
   button.addEventListener("click", updateCard);
 
+  //----------------------------------
   // Initial card setup on page load
+  //----------------------------------
   updateCard();
 
-  console.log("Hello Rigo from the console!");
+  console.log("Hello Ian from the console!");
 };

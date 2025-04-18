@@ -3,10 +3,27 @@
 body{
     background: green;
 }
-
-.card {
+.card{
     margin: 0 auto;
+    margin-top: 50px;
     width: 250px;
-    height: 400px;
-    
+    height: 350px;
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    background: white;
+}
+.card-header{
+    border-bottom: none;
+    background: white;
+}
+.card-icon{
+    font-size: 50px;
+}
+
+#generate:hover{
+    background-color: slateblue;
+}
+.card-footer{
+    border-top: none;
+    background: white;
 }
