@@ -3,3 +3,10 @@
 body{
     background: green;
 }
+
+.card {
+    margin: 0 auto;
+    width: 250px;
+    height: 400px;
+    
+}

@@ -15,22 +15,40 @@
     />
   </head>
   <body>
-    <!-- My Code Here -->
-     <div>
-        <div class="card">
-          <div class="card-icon">
+    <!-- Write your HTML code here, you can delete everything withing the body tags -->
+    <div class="container d-flex col-4 flex-column justify-content">
 
-          </div>
-          <div class="numner">
 
-          </div>
-          <div class="card-icon">
-            
-          </div>
+      <!-- This is the basic card. JS math.floor(math.random()) will pick a random icon (1-4) and number (0-12) -->
+
+      <div class="card d-flex"> 
+        <div class="card-header d-flex justify-content-start">
+          <h1 class="card-icon">
+            ♥ 
+          </h1>
         </div>
-     </div>
+        <div class="card-body align-middle" id="card-value">
+          3
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <h1 class="card-icon">
+            ♥
+          </h1>
+        </div>
+      </div> 
+    
 
-    <!-- Card -->
+
+
+      <!-- This button generates a new card -->
+      <button type="button" class="btn btn-primary m-1 p-1" id="generate">pick a card</button>
+
+
+      <footer>
+        Made with ❤️ by Ian
+      </footer>
+      
+    </div>
 
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
