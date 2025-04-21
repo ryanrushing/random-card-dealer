@@ -8,7 +8,7 @@ window.onload = function () {
   
   //============================================
   //
-  //      Choose a suit + value for card 
+  //      Choose a suit + value for card
   //
   //============================================
 
