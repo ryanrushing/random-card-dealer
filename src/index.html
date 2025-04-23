@@ -16,18 +16,17 @@
   </head>
   <body>
     <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container d-flex col-4 flex-column">
-
+    <div class="container card-container d-flex col-4 flex-column">
 
       <!-- This is the basic card. JS math.floor(math.random()) will pick a random icon (1-4) and number (0-12) -->
 
-      <div class="card d-flex"> 
+      <div class="card d-flex" id="card-first"> 
         <div class="card-header d-flex justify-content-start">
           <h1 class="card-icon">
             ♥ 
           </h1>
         </div>
-        <div class="card-body" id="card-value">
+        <div class="card-body">
           3
         </div>
         <div class="card-footer d-flex justify-content-end">
@@ -37,18 +36,34 @@
         </div>
       </div> 
     
+      <div class="card d-flex" id="card-second"> 
+        <div class="card-header d-flex justify-content-start">
+          <h1 class="card-icon">
+            ♥ 
+          </h1>
+        </div>
+        <div class="card-body">
+          3
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <h1 class="card-icon">
+            ♥
+          </h1>
+        </div>
+      </div> 
+
+    </div>
 
 
 
+  <div class="container d-flex col-4 flex-column">
       <!-- This button generates a new card -->
       <button type="button" class="btn btn-primary mt-5" id="generate">draw a card</button>
-
-
-      <footer class="fixed-bottom text-center">
-        Made with ❤️ by Ian
-      </footer>
-      
     </div>
+
+    <footer class="fixed-bottom text-center">
+      Made with ❤️ by Ian
+    </footer>
 
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>

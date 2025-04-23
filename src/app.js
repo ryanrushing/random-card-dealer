@@ -22,6 +22,8 @@ window.onload = function () {
     { icon: "♣", color: "black" }
   ];
 
+  const cardValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
   //------------------------------------------------------------
   // Function to pick a random index number for the suits array
   //------------------------------------------------------------
@@ -32,11 +34,25 @@ window.onload = function () {
   //---------------------------------------------
   // Function to pick a random value for the card
   //---------------------------------------------
-  const cardValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
   function getRandomValue() {
     return cardValues[Math.floor(Math.random() * cardValues.length)];
   }
+
+  var button = document.querySelector("#generate"); // Ensure the correct button is selected
+
+  var secondCard      = document.querySelector("#card-second");
+  var firstCard       = document.querySelector("#card-first");
+  var secondCardIcons = document.querySelectorAll("#card-second .card-icon");
+  var firstCardIcons  = document.querySelectorAll("#card-first .card-icon");
+  var secondCardValue = document.querySelector("#card-second .card-body");
+  var firstCardValue  = document.querySelector("#card-first .card-body");
+
+
+
+  var newIcon;
+  var newColor;
+  var newValue;
 
   //==========================================
   //
@@ -45,30 +61,62 @@ window.onload = function () {
   //==========================================
 
   function updateCard() {
-    const chosenSuit = getRandomSuit();
-    const chosenValue = getRandomValue();
 
+    firstCard.classList.add("card-flip");
+
+    setTimeout(function(){
+      firstCard.classList.remove("card-flip");
+    },2000);
+
+    secondCard.classList.add("card-rise");
+
+    
+    var chosenSuit = getRandomSuit();
+    var chosenValue = getRandomValue();
+   
     //-----------------------------------
     // Update the card's suit and color
     // ----------------------------------
-    const cardIcons = document.querySelectorAll(".card-icon");
-    cardIcons[0].textContent = chosenSuit.icon;
-    cardIcons[1].textContent = chosenSuit.icon;
-    cardIcons[0].style.color = chosenSuit.color;
-    cardIcons[1].style.color = chosenSuit.color;
+    secondCardIcons.forEach((cardSuit) => {
+      cardSuit.textContent = chosenSuit.icon;
+      cardSuit.style.color = chosenSuit.color;
+
+      newIcon = cardSuit.textContent;
+      newColor = cardSuit.style.color;
+    });
+   
+    //------------------------
+    // Update the card value
+    //------------------------
+    secondCardValue.textContent = chosenValue;
+
+    //------------------------
+    // Update the back card
+    //------------------------
+    setTimeout(updateTopCard, 2000);
+  }
+
+  function updateTopCard(){
+
+    firstCardIcons.forEach((cardSuit) => {
+
+      cardSuit.textContent = newIcon;
+      cardSuit.style.color = newColor;
+    });
 
     //------------------------
     // Update the card value
     //------------------------
-    const cardValueDiv = document.querySelector("#card-value");
-    cardValueDiv.textContent = chosenValue;
+    newValue = secondCardValue.textContent;
+
+    firstCardValue.textContent = newValue;
   }
 
   //----------------------------------------------------------------
   // Add event listener for the refresh button to draw a new card
   //----------------------------------------------------------------
-  const button = document.querySelector("#generate"); // Ensure the correct button is selected
   button.addEventListener("click", updateCard);
+
 
   //----------------------------------
   // Initial card setup on page load
